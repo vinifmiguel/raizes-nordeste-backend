@@ -4,9 +4,9 @@ Sistema de retaguarda desenvolvido em Node.js para suporte ao modelo de negócio
 
 ## 🚀 Pré-requisitos
 Para executar o projeto localmente, certifique-se de ter instalado no seu computador:
-* **Node.js** (versão 18 ou superior)[cite: 14]
-* **Gerenciador de pacotes npm** (já inclusivo na instalação do Node.js)[cite: 14]
-* **Banco de dados SQLite** (embutido via dependência do projeto)[cite: 14]
+* **Node.js** (versão 18 ou superior)
+* **Gerenciador de pacotes npm** (já inclusivo na instalação do Node.js)
+* **Banco de dados SQLite** (embutido via dependência do projeto)
 
 ## 📦 Como Instalar e Executar o Projeto
 
