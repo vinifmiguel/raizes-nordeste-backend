@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "Testes - API Raízes do Nordeste",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Login (Sucesso)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/auth/login", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["auth", "login"] },
+        "body": { "mode": "raw", "raw": "{\"email\": \"admin@raizes.com\", \"senha\": \"Senha@123\"}" }
+      }
+    },
+    {
+      "name": "2. Login (Falha - Credenciais Inválidas)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/auth/login", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["auth", "login"] },
+        "body": { "mode": "raw", "raw": "{\"email\": \"admin@raizes.com\", \"senha\": \"SenhaErrada\"}" }
+      }
+    },
+    {
+      "name": "3. Criar Pedido (Sucesso - Multicanal)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/pedidos", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["pedidos"] },
+        "body": { "mode": "raw", "raw": "{\"canalPedido\": \"TOTEM\", \"valorTotal\": 45.50}" }
+      }
+    },
+    {
+      "name": "4. Criar Pedido (Falha - Canal Inválido)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/pedidos", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["pedidos"] },
+        "body": { "mode": "raw", "raw": "{\"canalPedido\": \"TELEFONE\", \"valorTotal\": 45.50}" }
+      }
+    },
+    {
+      "name": "5. Processar Pagamento Mock (Aprovado)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/pagamentos/mock", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["pagamentos", "mock"] },
+        "body": { "mode": "raw", "raw": "{\"pedidoId\": 1, \"simularResultado\": \"APROVADO\"}" }
+      }
+    }
+  ]
+}
